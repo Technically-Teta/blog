@@ -1,0 +1,82 @@
+.App {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.Events {
+  box-shadow: 1px, gray;
+}
+
+h1 {
+  color: #00556e;
+  margin-bottom: 50px !important;
+}
+
+form{
+  margin-top: 50px;
+}
+
+div.react-confirm-alert-body{
+  background-color: #c4d6dc;
+  color: #d44714c1;
+  font-family: "lato", helvetica, sans-serif;
+}
+
+.errormessage{
+  color: red;
+  font-size: x-small
+}
+
+
+.table{
+border-color:salmon ;
+width: 100%;
+}
+
+header {
+  background-image: linear-gradient(to bottom right, rgb(244, 178, 229), yellow);
+  
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  
+  border: 2px solid #00556e; /* Add a solid border with a specific color */
+  display: flex;
+  width: 300%;
+  margin-right: 1100px;
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+
+
+.nav-links{
+display: flex;
+font-size: smaller;
+
+}
+  
+.navbar{
+  display: flex ;
+  margin-right: 300px;
+}
+
+.h3{
+  margin-left: 100px;
+  color: #dcd8d8;
+}
+
+.blog-head{
+  font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 32px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 26.4px; } h3 { font-family: "Coda Caption"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: "Coda Caption"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: "Coda Caption"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: "Coda Caption"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
+
+.verses-container {
+  width: 500px;
+  margin-top: 100px;
+  align-self: center;
+  padding: 50px;
+  border-radius: 20px;
+  position: relative;
+  background: rgb(245, 242, 242);
+  border: 1px solid black;
+
+}
