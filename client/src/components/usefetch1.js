@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-const useFetch = (url) => {
-    const [contactData, dataUpdate] = useState(null);
+const useFetch1 = (url) => {
+    const [entryData, entryDataUpdate] = useState(null); // Initialize entryData with null or initial data
      
 
     useEffect(() => {
@@ -13,7 +13,7 @@ const useFetch = (url) => {
             return res.json();
         }).then(result => {
             setTimeout(() => {
-                dataUpdate(result);
+               entryDataUpdate(result);
                 
             }, 20);
         }).catch(err => {
@@ -27,8 +27,7 @@ const useFetch = (url) => {
         return () => abortcont.abort();
 
     }, [url])
-    return { contactData }
+    return { entryData}
 }
 
-export default useFetch;
-
+export default useFetch1;
