@@ -28,7 +28,7 @@ function App() {
  
    
     <Routes>
-     
+       <Route path='/entrieslist' element={<EntriesList/>}></Route>
       <Route path='/subscriberlist' element={<SubscriberList/>}></Route>
       <Route path='/editsubscriber/:coid' element={<EditSubscriber/>}></Route>
       <Route path='/viewsubscriber' element={<ViewSubscriber/>}></Route>

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const useFetch = (url) => {
     const [contactData, dataUpdate] = useState(null);
-     
+    const [entryData, entryDataUpdate] = useState(null); // Initialize entryData state
 
     useEffect(() => {
         const abortcont = new AbortController();
@@ -14,20 +14,20 @@ const useFetch = (url) => {
         }).then(result => {
             setTimeout(() => {
                 dataUpdate(result);
-                
+                entryDataUpdate(result); // Update entryData with the same data
             }, 20);
         }).catch(err => {
             if (err.name === 'AbortError') {
-              //  console.log('Abort error');
+                // Handle abort error if needed
             } else {
-                (err.message);
-              
+                console.log(err.message);
             }
         })
         return () => abortcont.abort();
-
     }, [url])
-    return { contactData }
+
+    return { contactData, entryData }; // Return both contactData and entryData
 }
 
 export default useFetch;
+
