@@ -6,18 +6,18 @@ import useFetch from "./useFetch";
 // Use fetch works
 function SubscriberList() {
   // Form Page uses a get request
-const {contactData} = useFetch("http://localhost:3003/api/subscribers/");
+const {subscriberData} = useFetch("http://localhost:3003/api/subscribers/");
 
   const navigate = useNavigate();
 
   const Redirectdetail = (id) => {
     // Take me to the contacts page based on their id
-    navigate('/viewcontact/' + id);
+    navigate('/viewsubscriber/' + id);
   };
 
   // Edit contact function
   const conEdit = (id) => {
-    navigate('/viewcontact/' + id);
+    navigate('/viewsubscriber/' + id);
   };
 
   const conDelete = (id) => {
@@ -37,10 +37,10 @@ const {contactData} = useFetch("http://localhost:3003/api/subscribers/");
     <div>
       <div className='card-container'>
         <Card>
-          <Link className='btn btn-success' to="/addContact">Add New Subscriber</Link>
+          <Link className='btn btn-success' to="/addsubscriber">Add New Subscriber</Link>
           <h3>Personal Contacts App</h3>
           <Card.Body>
-            {contactData && 
+            {subscriberData && 
               <Table className='table' striped="columns">
                 <thead>
                   <tr>
@@ -52,7 +52,7 @@ const {contactData} = useFetch("http://localhost:3003/api/subscribers/");
                   </tr>
                 </thead>
                 <tbody>
-                  {contactData.map((item) => (
+                  {subscriberData.map((item) => (
                     <tr key={item.id}>
                       <td>{item.id}</td>
                       <td>{item.fullname}</td>
