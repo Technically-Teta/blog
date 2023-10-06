@@ -36,9 +36,8 @@ const {subscriberData} = useFetch("http://localhost:3003/api/subscribers/");
   return (
     <div>
       <div className='card-container'>
-        <Card>
-          <Link className='btn btn-success' to="/addsubscriber">Add New Subscriber</Link>
-          <h3>Personal Contacts App</h3>
+        <Card  style={{ width: '50rem' }}  body outline color="success" className="mx-auto my-3"   >
+          <Link className='btn btn-success' to="/addContact">Add New Contact</Link>
           <Card.Body>
             {subscriberData && 
               <Table className='table' striped="columns">
@@ -59,10 +58,11 @@ const {subscriberData} = useFetch("http://localhost:3003/api/subscribers/");
                       <td>{item.email}</td>
                       <td>{item.phone}</td>
                       <td>{item.notes}</td>
+                      
+                        
+                      
                       <td>
                         <button className="btn btn-primary" onClick={() => Redirectdetail(item.id)}>Details</button>
-                      </td>
-                      <td>
                         <button className="btn btn-primary" onClick={() => conEdit(item.id)}>Edit</button> |
                         <button className="btn btn-danger" onClick={() => conDelete(item.id)}>Delete</button>
                       </td>

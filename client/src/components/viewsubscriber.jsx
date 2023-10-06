@@ -29,13 +29,13 @@ const backtolist=()=>{
      <Card style={{ width: '18rem' }}></Card>
      <Card.Img variant="top" src="mina-rad-90zUYr3KDjA-unsplash.jpg/100px180?text=Image cap" />
      <Card.Body>
-        <Card.Title>Individual Contact page</Card.Title>
+        <Card.Title>Subscribers page</Card.Title>
         <Card.Text>
            This is one of your contacts
         </Card.Text>    
         </Card.Body>  
         <ListGroup className="list-group-flush">
-        <ListGroup.Item> Contact Name is: {contact.fullname} and the id is {contact.id}</ListGroup.Item>  
+        <ListGroup.Item>  Name is: {contact.fullname} and the id is {contact.id}</ListGroup.Item>  
         <ListGroup.Item>Their email is: {contact.email}</ListGroup.Item>
         <ListGroup.Item>Their phone is:{contact.phone}</ListGroup.Item>
         <ListGroup.Item>New notes {contact.notes}</ListGroup.Item>

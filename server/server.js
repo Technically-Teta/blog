@@ -53,41 +53,26 @@ app.get('/api/subscribers', async (req, res) =>{
 
 })
 
+//first test with postman/entries: 
+app.get('/api/entries', async (req, res) =>{
+   
+    try{
+        const { rows: entries } = await db.query('SELECT * FROM entries');
+        console.log("In the server", entries)
+        res.send(entries);
 
+    } catch(error){
+        console.log(error);
+        return res.status(400).json({error});
 
+    }
 
+})
 
-
-
-// // creates an endpoint for the route /api/weather
-// app.get('/api/verses/', (req, res) => {
-//   const verses = req.query.reference;
-//   //console.log(verses);
-//   const apiKey = process.env.API_KEY;
-
-//   // const params = new URLSearchParams({
-//   //   q: city,
-//   //   appid: apiKey,
-//   //   units: "Metric",
-//   // });
-
-//   const url =   `https://bible-api.com/?random=verse${params}`;
- 
-//   fetch(url)
-//     .then((res) => res.json())
-//     .then((data) => {
-//       //console.log(data);
-//       res.send({ data });
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// });
 
 
 
 //API ENDPOINT -- POST
-
 
 
 app.post('/api/subscribers', async (req, res) =>{
@@ -113,6 +98,37 @@ console.log("In the server", contactInfo)
          res.status(400).json({error});
      }
 })
+
+
+app.post('/api/entries', async (req, res) =>{
+ 
+    const entriesInfo ={
+     notes: req.body.notes,
+     date: req.body.date,
+     location: req.body.location
+    };
+   console.log("In the server", entriesInfo)
+        try {   
+            const entriesResult = await db.query(
+            "INSERT INTO entries (notes, date, location) VALUES ($1, $2, $3) RETURNING *",
+                [entriesInfo.notes,entriesInfo.date,entriesInfo.location]
+            );
+
+            let dbResponse = entriesResult.rows[0];
+               console.log(dbResponse)
+            res.json(dbResponse);
+        } catch(error){
+            console.log(error);
+            res.status(400).json({error});
+        }
+   })
+
+
+
+
+
+
+
 
 
 
