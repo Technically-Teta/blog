@@ -15,7 +15,7 @@ function EditSubscriber() {
 
 // change to subscriber 
     useEffect(() => {
-        fetch('http://localhost:3000/api/subscribers/' + coid).then((res) => {
+        fetch('http://localhost:3003/api/subscribers/' + coid).then((res) => {
             return res.json();
         }).then((res) => {
             // console.log(res);
@@ -38,7 +38,7 @@ function EditSubscriber() {
         e.preventDefault();
         const contactInfo = { id, fullname, email, notes };
 
-       fetch(`http://localhost:3000/api/contacts/` +id,
+       fetch(`http://localhost:3003/api/subscribers/` +id,
         {
           method: 'PUT',
           headers: {

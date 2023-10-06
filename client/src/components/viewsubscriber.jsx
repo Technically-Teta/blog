@@ -8,7 +8,7 @@ function ViewSubscriber() {
 //shows info for one user - DETAILS
 //search allows to show user 
 const { id } = useParams()
-const { contact } = useFetch('http://localhost:3000/api/contact/' + id)
+const { contact } = useFetch('http://localhost:3003/api/subscribers/' + id)
 
 // change this to subscribers after you the update the table
 const navigate=useNavigate()

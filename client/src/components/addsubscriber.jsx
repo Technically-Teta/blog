@@ -19,7 +19,7 @@ const AddSubscriber =()=> {
     e.preventDefault();
     const conobj ={fullname, email, phone, notes}
 
-    fetch("http://localhost:3000/api/contacts", {
+    fetch("http://localhost:3003/api/contacts", {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(conobj)

@@ -6,7 +6,7 @@ import useFetch from "./useFetch";
 // Use fetch works
 function SubscriberList() {
   // Form Page uses a get request
-const {contactData} = useFetch("http://localhost:3000/api/contacts/");
+const {contactData} = useFetch("http://localhost:3003/api/subscribers/");
 
   const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ const {contactData} = useFetch("http://localhost:3000/api/contacts/");
   const conDelete = (id) => {
   
       if (window.confirm('Are you sure you want to delete this contact?')) {
-        fetch("http://localhost:3000/api/contacts/" + id, { method: 'DELETE' })
+        fetch("http://localhost:3003/api/subscribers/" + id, { method: 'DELETE' })
           .then(() => {
             window.location.reload();
           })
@@ -37,7 +37,7 @@ const {contactData} = useFetch("http://localhost:3000/api/contacts/");
     <div>
       <div className='card-container'>
         <Card>
-          <Link className='btn btn-success' to="/addContact">Add New Contact</Link>
+          <Link className='btn btn-success' to="/addContact">Add New Subscriber</Link>
           <h3>Personal Contacts App</h3>
           <Card.Body>
             {contactData && 
