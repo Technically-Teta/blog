@@ -40,8 +40,8 @@ const AddSubscriber =()=> {
     <div>
         <form className="container" onSubmit={handlePOSTRequest}> 
         <div className="row">
-                    <div className="col-lg-6 offset-lg-3">
-                        <h3>Add contact</h3>
+                        <div className="form-group">
+                        <h3>Add Subscriber</h3>
                         <div className="form-group">
                             <label>ID</label>
                             <input value={id} disabled="disabled" className="form-control"></input>

@@ -1,6 +1,6 @@
-DROP TABLE contacts;
+DROP TABLE subscribers;
  
-CREATE TABLE contacts (
+CREATE TABLE subscribers (
     id serial PRIMARY KEY,
     name TEXT,
     email TEXT,
@@ -10,7 +10,7 @@ CREATE TABLE contacts (
 );
 
  
-INSERT INTO contacts (
+INSERT INTO subscribers(
     name,
     email, 
     phone, 
@@ -23,7 +23,7 @@ VALUES (
     'I am looking for sam in my contacts'
 );
 
-INSERT INTO contacts (
+INSERT INTO subscribers (
     name,
     email, 
     phone, 
@@ -49,7 +49,7 @@ VALUES (
     'Brand new number!'
 );
 
-select * from contacts;
+select * from subscribers ;
 
 
 

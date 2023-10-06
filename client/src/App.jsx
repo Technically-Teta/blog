@@ -1,7 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AppHeader from './components/appheader';
-
 import SubscriberList from './components/subscriberlist';
 import AddSubscriber from './components/addsubscriber';
 import EditSubscriber from './components/editsubscriber';
