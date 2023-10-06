@@ -1,10 +1,9 @@
-//type="module";
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
-const db = require('./db/db-connection.js'); 
+const db = require('./db/db-connection.js')
 
 const app = express();
 const PORT = process.env.PORT || 3003;
@@ -16,7 +15,6 @@ app.use(express.json());
 // Configuring body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
 
 
 //API ENDPOINT -- GET
