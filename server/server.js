@@ -127,11 +127,6 @@ app.post('/api/entries', async (req, res) =>{
 
 
 
-
-
-
-
-
 //DELETE FROM events WHERE id=5;
 app.delete('/api/contacts/:id', async (req, res) =>{
     try{
@@ -146,6 +141,24 @@ app.delete('/api/contacts/:id', async (req, res) =>{
         res.status(400).json({error});
     }
 })
+
+app.delete('/api/entries/:id', async (req, res) =>{
+    try{
+    const { id } = req.params;
+    const deleteOperation = await db.query("DELETE FROM entries WHERE id=$1", [id]);
+    console.log(deleteOperation);   
+    res.json("The entry was deleted!");
+    res.status(200).end()
+
+    } catch(error){
+        console.log(error);
+        res.status(400).json({error});
+    }
+})
+
+
+
+
 
 //UPDATING something in the DB
 app.put('/api/contacts/:id', async (req, res) =>{
@@ -163,6 +176,36 @@ app.put('/api/contacts/:id', async (req, res) =>{
 
     
  })
+
+ app.put('/api/entries/:id', async (req, res) =>{
+
+    try{
+    const { id } = req.params;
+    const { notes, date, location }  = req.body;
+    const editedEntries = await db.query("UPDATE entries SET  notes =$1, date=$2, location=$3,  WHERE id = $4 RETURNING *", [notes, date,location,  id]);
+    res.json(editedEntries.rows[0])
+    
+   } catch(error){
+    console.log(error);
+    res.status(400).json({error});
+   }
+
+    
+ })
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 app.listen(PORT, () => console.log(`Hola! Server running on Port http://localhost:${PORT}`));
