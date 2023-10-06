@@ -6,7 +6,7 @@ import AddSubscriber from './components/addsubscriber';
 import EditSubscriber from './components/editsubscriber';
 import ViewSubscriber from './components/viewsubscriber';
 import Bible from './components/bible';
-
+import EntriesList from './components/entrieslist';
 
 function App() {
   
@@ -21,6 +21,7 @@ function App() {
     <AppHeader/>
        <div className='biblebox'>
          <Bible/>
+         <EntriesList/>
        </div>
     <BrowserRouter>   
       

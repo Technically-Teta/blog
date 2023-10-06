@@ -11,7 +11,7 @@ const {subscriberData} = useFetch("http://localhost:3003/api/subscribers/");
   const navigate = useNavigate();
 
   const Redirectdetail = (id) => {
-    // Take me to the contacts page based on their id
+    // Take me to the subscriber page based on their id
     navigate('/viewsubscriber/' + id);
   };
 
